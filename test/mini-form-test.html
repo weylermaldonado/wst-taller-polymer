@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../bower_components/shadydom/shadydom.min.js"></script>
+    <script src="../bower_components/custom-elements/custom-elements.min.js"></script>
+    <script src="../web-component-tester/browser.js"></script> 
+    <script src="../mini-form.js"></script>
+</head>
+<body>
+    <mini-form></mini-form>
+  <script>
+    suite('<mini-form>', function() {
+      let component = document.querySelector('mini-form');
+      test('renders div', () => {
+        assert.isOk(component.shadowRoot.querySelector('div'));
+      });
+    });
+  </script>
+</body>
+</html>
