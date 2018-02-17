@@ -18,12 +18,17 @@ $ bower install --save webcomponentsjs
 ```
 Luego instalemos polyserve
 ```bash
- sudo npm isntall polyserve -g
+$ sudo npm isntall polyserve -g
 ```
 Creemos un archivo llamado `index.html`, dentro de las etiquetas `<head>`, importemos el siguiente archivo
 ```html
-<script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+<script src="/bower_components/webcomponentsjs/webcomponents-hi.js"></script>
 ```
+Una vez creado nuestro archivo `index.html`, crearemos otro archivo con el nombre de nuestro componente
+```text
+mi-componente.html
+```
+**IMPORTANTE:** Por convención los custom elements **siempre** deben de llevar un nombre compuesto por **dos palabras** y deben de estar de **separadas por guión medio**, como se muestra en el ejemplo.
 ## Instalación (producción)
 
 Para usar Polymer en producción necesitas:
