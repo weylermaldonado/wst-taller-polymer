@@ -27,13 +27,15 @@
             template = documentoAImportar.querySelector('template').content, ///Del documento que vas a importar, jala el template y asocialo a su contenido
             prototipoDeMiElemento = Object.create(HTMLElement.prototype); ///Creamos un el prototipo de mi elemento  
 
-            prototipoDeMiElemento.who = 'Workshop Technology';
-            ///minuto 13:50
-
+            prototipoDeMiElemento.who = 'workshop technology';
+       
+///Empiezan el lifecycle callback de nuestro elemento
             ///Comportamiento del elemento cuando se inserte el nodo en el DOM
-            prototipoDeMiElemento.createdCallback = function (){
+            prototipoDeMiElemento.createdCallback = function ()
+            {
                 var shadowRoot= this.createShadowRoot(),
-                clone = documentoImportador.importNode(template,true);
+                clone = documentoImportador.importNode(template,true); 
+                //Importa el nodo del documento del template, el true es para importar a los hijos
 
                 shadowRoot.appendChild(clone);
         
@@ -47,14 +49,17 @@
                 }
 
             };
-
-            prototipoDeMiElemento.attributeChangedCallback = function (attr, oldValue, newValue){
+            
+            //Siempre que se modifique un atributo del componente, se llamará
+            prototipoDeMiElemento.attributeChangedCallback = function (attr, newValue)
+            {
                 if(attr === 'who'){
                     this.setWho = newValue;
                 }
             };
 
-             prototipoDeMiElemento.setWho = function (value) {
+             prototipoDeMiElemento.setWho = function (value) 
+             {
                  this.who = value;
                  this.strong.textContent = this.who;
              };
